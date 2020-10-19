@@ -1,4 +1,4 @@
 # Vanilla-JS-toyproject
 
 
-Practice Vanillaa JS
+Practice Vanilla JS
