@@ -50,7 +50,7 @@ function getFieldName (input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-function checkPasswordsMath (input1, input2) {
+function checkPasswordsMatch (input1, input2) {
   if (input1.value !== input2.value) {
     showError(input2, 'Passwords do not match');
   }
@@ -63,5 +63,5 @@ form.addEventListener('submit', e => {
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
   checkEmail(email);
-  checkPasswordsMath(password, password2);
+  checkPasswordsMatch(password, password2);
 })
