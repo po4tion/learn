@@ -9,6 +9,7 @@ let data = [];
 getRandomUser();
 getRandomUser();
 getRandomUser();
+console.log(data);
 
 async function getRandomUser () {
   const res = await fetch('https://randomuser.me/api/');
