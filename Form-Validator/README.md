@@ -6,4 +6,4 @@
 
 반복되는 변수들이나 같은 함수를 사용하는 변수(or array)들은 forEach 문으로 간결하게 작성이 가능했으며 return 값이 필요하다면 map 함수를 사용하자.
 
-<img src="./images/img.png" />
+![이미지](./images/img.png)
