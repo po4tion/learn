@@ -6,4 +6,4 @@
 
 Localstorage에 대해 좀 더 지식이 필요하다는 것을 느꼈다.
 
-<img src="./images/img.png" />
+![이미지](./images/img.png)
