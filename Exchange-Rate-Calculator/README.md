@@ -4,4 +4,4 @@
 
 JSON에 대해 깊은 이해가 필요할 것 같다.
 
-<img src="./img/readme.png" />
+![이미지](./img/readme.png)
