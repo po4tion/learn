@@ -1,4 +1,4 @@
-# Relaxer-App
+# New-Year-Countdown
 
 <h1>using HTML, SCSS, JavaScript</h1>
 
