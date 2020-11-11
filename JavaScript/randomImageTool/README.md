@@ -15,10 +15,10 @@
 1. 랜덤 이미지 정보 output
 2. Arrow 버튼을 이용한 이미지 릴레이
 
-## Result
-
-![tool](./img/readme.png)
-
 ## Problems
 
 1. Unsplash API 키가 DEMO라서 시간당 송출할 수 있는 사진제한이 50장이다.
+
+## Result
+
+![tool](./img/readme.png)
