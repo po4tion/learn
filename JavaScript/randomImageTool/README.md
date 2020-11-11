@@ -17,7 +17,7 @@
 
 ## Problems
 
-1. Unsplash API 키가 DEMO라서 시간당 송출할 수 있는 사진제한이 50장이다.
+1. Unsplash API 키가 DEMO라서 시간당 송출할 수 있는 사진제한이 50장이다. 해결법은 unsplash 측에서 your app을 승인해주면 시간당 사진 제한이 5000장인 products 등급으로 업그레이드된다.
 
 ## Result
 
