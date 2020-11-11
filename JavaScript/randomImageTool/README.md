@@ -18,3 +18,7 @@
 ## Result
 
 ![tool](./img/readme.png)
+
+## Problems
+
+1. Unsplash API 키가 DEMO라서 시간당 송출할 수 있는 사진제한이 50장이다.

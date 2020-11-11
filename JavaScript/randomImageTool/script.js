@@ -1,4 +1,4 @@
-const unsplashKey = '7wR0bxTett5rO-qbqxQviHFmqOb0ndsDI7ep3rbcACQ';
+const unsplashKey = '52_Kb92HYPhwNjlSs08txRJm18j-ZNzG9SIaNheJHgA';
 const section = document.getElementById('section');
 const btnLeft = document.getElementById('btn__left');
 const btnRight = document.getElementById('btn__right');
@@ -13,13 +13,18 @@ async function getImage () {
 
   section.innerHTML = `
   <img class="section__image" src="${urls}" alt="randomImage" />
+  <p class="section__user">Photographer: <span class="section__user--color">${data.user.name}</span></p>
   <p class="section__name" id="name"></p>
   `;
 
   const name = document.getElementById('name');
 
-  name.innerText = data.alt_description;
-  
+  if (data.alt_description === null) {
+    name.innerText = 'No Description';
+  } else {
+    name.innerText = data.alt_description;
+  }
+
   srcList.push(
     {
       url: urls,
