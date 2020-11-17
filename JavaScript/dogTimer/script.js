@@ -14,6 +14,7 @@ clear.addEventListener('click', clearTimer);
 
 function startTimer () {
   start.value = '시작';
+  console.log(typeof (hour.value));
   let currentHour = +hour.value * 60 * 60;
   let currentMinute = +minute.value * 60;
   let currentSecond = +second.value;
