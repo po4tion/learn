@@ -27,29 +27,44 @@ allClear.addEventListener('click', () => {
   numArray = [];
   operArray = [];
   oneTime = true;
+  sum = 0;
 });
 
 calculation.addEventListener('click', calculate);
 
-// sign 기능 구현요망
+sign.addEventListener('click', () => {
+  if (numStr > 0) {
+    numStr = -numStr
+    output(str + '(' + numStr + ')');
+  } else if (numStr < 0) {
+    numStr = -numStr
+    output(str + numStr);
+  }
+
+});
 
 function output (value) {
   calcOutput.innerText = value;
 }
 
 function numbers () {
-  if (str.length > 8) {
+  if (str.length + numStr.length > 8) {
     return alert("최대 입력 개수는 9개입니다.");
   }
-  numStr += this.innerText;
-  str += this.innerText;
+
+  if (numStr === 0) {
+    numStr = this.innerText;
+  } else {
+    numStr += this.innerText;
+  }
+
   oneTime = true;
 
-  output(str);
+  output(str + numStr);
 }
 
 function operate () {
-  if (str.length > 8) {
+  if (str.length + numStr.length > 8) {
     return alert("최대 입력 개수는 9개입니다.");
   }
 
@@ -57,30 +72,51 @@ function operate () {
     return;
   }
 
+  if (calcOutput.innerText === '0') {
+    return;
+  }
+
+  str += numStr + this.innerText;
   numArray.push(+numStr);
   numStr = '';
   operArray.push(this.innerText);
 
-  str += this.innerText;
   oneTime = false;
 
   output(str);
 }
 
 function calculate () {
+  let multi = 0;
+
+  if (numArray.length === 0) {
+    calcOutput.innerText = numStr;
+    return;
+  }
+
   numArray.push(+numStr);
 
+  operArray.forEach((v, idx) => {
+    if (v === '*') {
+      multi = numArray[idx] * numArray[idx + 1];
+      numArray[idx] = 0;
+      numArray[idx + 1] = multi;
+      v = '+';
+    } else if (v === '/') {
+      multi = numArray[idx] / numArray[idx + 1];
+      numArray[idx] = 0;
+      numArray[idx + 1] = multi;
+      v = '+';
+    } else if (v === '%') {
+      multi = numArray[idx] % numArray[idx + 1];
+      numArray[idx] = 0;
+      numArray[idx + 1] = multi;
+      v = '+';
+    }
+  });
+
   for(let i = 0; i < operArray.length; i++) {
-    if (operArray[i] === '%') {
-      sum = numArray[i] % numArray[i + 1];
-      numArray[i + 1] = sum;
-    } else if (operArray[i] === '/') {
-      sum = numArray[i] / numArray[i + 1];
-      numArray[i + 1] = sum;
-    } else if (operArray[i] === '*') {
-      sum = numArray[i] * numArray[i + 1];
-      numArray[i + 1] = sum;
-    } else if (operArray[i] === '-') {
+    if (operArray[i] === '-') {
       sum = numArray[i] - numArray[i + 1];
       numArray[i + 1] = sum;
     } else {
@@ -92,7 +128,7 @@ function calculate () {
   numArray = [];
   operArray = [];
   numStr = sum;
-  str = String(sum);
+  str = '';
 
   calcOutput.innerText = sum;
 }
