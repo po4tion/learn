@@ -9,6 +9,11 @@ body {
   font-family: 'Anton', sans-serif;
   color: #fff;
 }
+h1 {
+  position: absolute;
+  top: 0;
+  font-size: 4rem;
+}
 .container {
   display: flex;
   flex-direction: column;

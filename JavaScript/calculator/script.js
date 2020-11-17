@@ -66,10 +66,6 @@ function numbers () {
 }
 
 function operate () {
-  // if (str.length + numStr.length > 8) {
-  //   return alert("최대 입력 개수는 9개입니다.");
-  // }
-
   if (oneTime !== true) {
     return;
   }
