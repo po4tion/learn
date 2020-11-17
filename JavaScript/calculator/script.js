@@ -20,15 +20,7 @@ operator.forEach(oper => {
   oper.addEventListener('click', operate);
 });
 
-allClear.addEventListener('click', () => {
-  calcOutput.innerText = 0;
-  str = '';
-  numStr = '';
-  numArray = [];
-  operArray = [];
-  oneTime = true;
-  sum = 0;
-});
+allClear.addEventListener('click', clear);
 
 calculation.addEventListener('click', calculate);
 
@@ -47,8 +39,18 @@ function output (value) {
   calcOutput.innerText = value;
 }
 
+function clear () {
+  calcOutput.innerText = 0;
+  str = '';
+  numStr = '';
+  numArray = [];
+  operArray = [];
+  oneTime = true;
+  sum = 0;
+}
+
 function numbers () {
-  if (str.length + numStr.length > 8) {
+  if (numStr.length > 8) {
     return alert("최대 입력 개수는 9개입니다.");
   }
 
@@ -64,9 +66,9 @@ function numbers () {
 }
 
 function operate () {
-  if (str.length + numStr.length > 8) {
-    return alert("최대 입력 개수는 9개입니다.");
-  }
+  // if (str.length + numStr.length > 8) {
+  //   return alert("최대 입력 개수는 9개입니다.");
+  // }
 
   if (oneTime !== true) {
     return;
@@ -130,5 +132,13 @@ function calculate () {
   numStr = sum;
   str = '';
 
-  calcOutput.innerText = sum;
+  if (String(sum).length > 9) {
+    calcOutput.innerText = 'Error';
+
+    setTimeout(() => {
+      clear();
+    }, 1000);
+  } else {
+    calcOutput.innerText = sum;
+  }
 }
