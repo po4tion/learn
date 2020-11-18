@@ -12,8 +12,10 @@
 
 ## Function
 
-1. TODO List 출력
-2. 버튼 이벤트
+1. writeText : TODOlist를 입력할 수 있게 폼 생성
+2. closeText : TODOList 입력폼을 닫는 기능
+3. submitText : TODOList 출력 기능
+4. clickColor: TODOList 버튼 이벤트 기능
 
 ## Problems
 
