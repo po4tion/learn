@@ -92,6 +92,8 @@ body {
 }
 
 .todo__list {
+  min-height: 40px;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,11 +106,28 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+.todo__list p i {
+  color: #00b894;
+}
+
+.todo__list p i:hover {
+  color: #d63031;
+}
+
+.todo__list p i:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.todo__text {
+  max-width: 90%;
+}
+
 .todo__centerline {
   position: absolute;
-  width: 90%;
+  width: 85%;
   top: 50%;
-  left: 0;
+  left: 30px;
   border: 1px solid #00b894;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -122,6 +141,10 @@ body {
   border-radius: 50%;
   background-color: #d63031;
   text-align: center;
+}
+
+.todo__clicked--bg {
+  background-color: #00b894;
 }
 
 .todo__clicked:hover {
@@ -206,12 +229,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form__active textarea {
   width: 100%;
-  height: 80%;
+  height: 300px;
   resize: none;
   padding: 20px;
   font-size: 3rem;
@@ -219,6 +244,7 @@ body {
 }
 
 .form__active input[type="submit"] {
+  width: 100%;
   font-size: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

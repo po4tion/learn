@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +11,19 @@
     <div class="bg--in">
       <div class="date">
         <div class="date__day">
-          <p>12</p>
+          <p id="day">12</p>
           <div class="date__month">
-            <p>NOV</p>
-            <p>2020</p>
+            <p id="month">NOV</p>
+            <p id="year">2020</p>
           </div>
         </div>
 
         <div class="date__week">
-          <p>THURSDAY</p>
+          <p id="week">THURSDAY</p>
         </div>
       </div>
 
-      <div class="todo" id="todo">
-        <!-- <div class="todo__list">
-          <p>Buy new computer</p>
-          <p class="todo__clicked" id="clicked"></p>
-          <p class="todo__centerline" id="centerline"></p>
-        </div> -->
-      </div>
+      <div class="todo" id="todo"></div>
     </div>
 
     <div class="input">
@@ -51,6 +45,7 @@
 
 
   <script src="https://kit.fontawesome.com/909bf44ce5.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="./js/todolist.js"></script>
+  <script src="./js/date.js"></script>
 </body>
 </html>
