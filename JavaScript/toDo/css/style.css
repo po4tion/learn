@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Goldman&family=Noto+Sans+KR&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background-color: #ffeaa7;
+  font-family: 'Goldman', cursive;
+  font-size: 16px;
+}
+
+.bg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70vh;
+  width: 50%;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.bg--in {
+  height: 90%;
+  width: 90%;
+  padding: 20px;
+}
+
+.date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.date__day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  position: relative;
+  top: -20px;
+}
+
+.date__day > p {
+  font-size: 5rem;
+}
+
+.date__month {
+  margin-left: 20px;
+}
+
+.date__month > p {
+  font-size: 2rem;
+}
+
+.date__month p:first-child {
+  padding-top: 11px;
+  height: 40px;
+}
+
+.date__week {
+  font-size: 1.5rem;
+}
+
+.todo {
+  height: 88%;
+  padding: 20px;
+  position: relative;
+}
+
+.todo__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.todo__centerline {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 0;
+  border: 1px solid #00b894;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.todo__clicked {
+  position: absolute;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #d63031;
+  text-align: center;
+}
+
+.todo__clicked:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.input {
+  position: absolute;
+  bottom: -60px;
+  font-size: 6rem;
+}
+
+.input i {
+  color: #d63031;
+}
+
+.input i:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.input i:active {
+  color: #00b894;
+}
+
+.form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.form__align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.form__align label {
+  font-size: 4rem;
+}
+
+.form__align i {
+  position: relative;
+  right: -76%;
+  bottom: -44%;
+  font-size: 3rem;
+  color: #0984e3;
+}
+
+.form__align i:hover {
+  color: #2d3436;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.form__align i:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.form__active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 20%;
+}
+
+.form__active textarea {
+  width: 100%;
+  height: 80%;
+  resize: none;
+  padding: 20px;
+  font-size: 3rem;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.form__active input[type="submit"] {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=style.css.map */
