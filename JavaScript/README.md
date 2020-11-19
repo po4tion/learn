@@ -8,3 +8,4 @@
 3. calculator : 2020-11-18(Wed)
 4. toDo : 2020-11-18(Wed)
 5. colorPicker : 2020-11-19(Thur)
+6. stopWatch : 2020-11-20(Fri)
