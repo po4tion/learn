@@ -3,6 +3,7 @@ import './App.css';
 // import Radium, { StyleRoot } from 'radium';
 import styled from 'styled-components';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 const StyledButton = styled.button`
   background-color: ${props => props.alt ? 'red' : 'green'};
@@ -78,12 +79,12 @@ class App extends Component {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <Person
+            return <ErrorBoundary><Person
               click={() => this.deletePersonHandler(index)}
               name={person.name}
               age={person.age}
               key={person.id}
-              changed={(event) => this.nameChangedHandler(event, person.id)} />
+              changed={(event) => this.nameChangedHandler(event, person.id)} /></ErrorBoundary>
           })}
         </div>
       );
@@ -103,9 +104,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working!</p>
-        <button className="button" onClick={this.togglePersonsHandler}>
+        <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>
           Toggle Persons
-        </button>
+        </StyledButton>
         {persons}
       </div>
     );
