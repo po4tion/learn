@@ -8,6 +8,9 @@ class OrderSummary extends Component {
     componentWillUpdate() {
         console.log('[OrderSummary] WillUpdate');
     }
+    componentDidMount () {
+        console.log('[OrderSummary] DidMount]');
+    }
 
     render () {
         const ingredientSummary = Object.keys( this.props.ingredients )
