@@ -8,7 +8,7 @@ export const decrease = createAction(DECREASE);
 
 export const increaseAsync = () => (dispatch) => {
   setTimeout(() => {
-    dispatch('increase()');
+    dispatch(increase());
   }, 1000);
 };
 
