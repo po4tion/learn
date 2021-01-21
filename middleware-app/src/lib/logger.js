@@ -8,3 +8,5 @@ const logger = (store) => (next) => (action) => {
 };
 
 export default logger;
+
+//redux-logger 로 대체
