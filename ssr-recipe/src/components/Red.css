@@ -1,0 +1,10 @@
+.Red {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 128px;
+  background-color: red;
+  color: #fff;
+  font-size: 1.5rem;
+}
