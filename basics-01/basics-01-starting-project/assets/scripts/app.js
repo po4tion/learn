@@ -7,4 +7,11 @@
  * ! 변수와 상수명을 지을 때 키워드들을 이름으로 사용할 수 없다. (let, const 등의 이름을 허용하지 않는다)
  * */
 
+/**
+ * * JavaScript는 위에서 아래로 코드가 실행된다.
+ */
 let result = 0;
+
+result = result + 10;
+
+outputResult(result, "");
