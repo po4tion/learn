@@ -15,3 +15,16 @@ let result = 0;
 result = result + 10;
 
 outputResult(result, "");
+
+/**
+ * * 함수에는 세미콜론을 붙이지 않는다.
+ * * 공백, 줄 바꿈과 들여쓰기는 모두 선택 사항이지만, 읽기 쉬운 코드를 작성하기 위해서는 필요하다.
+ */
+function add(num1, num2) {
+  const result = num1 + num2;
+
+  return result;
+}
+
+add(1, 5);
+add(2, 7);
