@@ -20,6 +20,8 @@ outputResult(result, "");
 /**
  * * 함수에는 세미콜론을 붙이지 않는다.
  * * 공백, 줄 바꿈과 들여쓰기는 모두 선택 사항이지만, 읽기 쉬운 코드를 작성하기 위해서는 필요하다.
+ * * 전역변수를 함수 내에서 사용하는 것은 함수를 이해하기 어렵게 만든다.
+ * * 함수는 독립적으로 동작해야 한다.
  */
 
 /**
@@ -29,6 +31,24 @@ outputResult(result, "");
  * * 이때 파일 내에서 함수를 찾게 되면 함수를 자동으로 맨 위로 끌고 가서 인식을 시킨다.
  * * 즉, script를 실행하기 전에 자동으로 모든 함수를 등록한다.
  */
+
+/**
+ * ? 함수의 variable shadowing 사용
+ * * let userName = 'DongGyu';
+ *
+ * * function greetUser(name) {
+ * *   let userName = name;
+ * *   alert(userName);
+ * * }
+ *
+ * * userName = 'Kuma';
+ * * greetUser('DongGyu');
+ *
+ * * 함수의 변수는 자체 범위(block scope)를 갖기 때문에 JavaScript는 shadowing이라는 작업을 수행한다.
+ * * userName이라는 변수명이 2번 선언되었지만 greetUser 함수 내에서는 userName을 참조할 때 항상 local shadowing 변수를 참조하기 때문에,
+ * * userName이라는 지역 변수가 존재하지 않을 경우에만 전역에 선언되어 있는 userName을 사용한다.
+ */
+
 function add(num1, num2) {
   const result = num1 + num2;
 
