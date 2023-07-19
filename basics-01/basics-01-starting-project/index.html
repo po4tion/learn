@@ -10,9 +10,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles/app.css" />
-
-    <!-- New! attribute의 문자를 따옴표 혹은 쌍따옴표로 감싸지 않아도 동작한다 -->
-    <script src=assets/scripts/app.js></script>
   </head>
   <body>
     <header>
@@ -32,5 +29,10 @@
       <h2 id="current-calculation">0</h2>
       <h2>Result: <span id="current-result">0</span></h2>
     </section>
+
+    <!-- JavaScript 파일의 동작하는 순서가 중요하다 -->
+    <script src="assets/scripts/vendor.js"></script>
+    <!-- New! attribute의 문자를 따옴표 혹은 쌍따옴표로 감싸지 않아도 동작한다 -->
+    <script src="assets/scripts/app.js"></script>
   </body>
 </html>
