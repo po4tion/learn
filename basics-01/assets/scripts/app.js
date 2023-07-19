@@ -5,17 +5,15 @@
  * * * 변수와 상수명은 $ 문자로 시작할 수 있다.
  * * * 변수와 상수명은 _ 문자로 시작할 수 있다.
  * ! 변수와 상수명을 지을 때 키워드들을 이름으로 사용할 수 없다. (let, const 등의 이름을 허용하지 않는다)
- * */
+ */
 
 /**
  * * JavaScript는 위에서 아래로 코드가 실행된다.
  * * 변수와 상수는 사용하기 전에 먼저 선언을 해야 한다.
  */
 
-let result = 0;
-result = result + 10;
-
-outputResult(result, "");
+const defaultResult = 0;
+let currentResult = defaultResult;
 
 /**
  * * 함수에는 세미콜론을 붙이지 않는다.
@@ -51,12 +49,11 @@ outputResult(result, "");
  * * userName이라는 지역 변수가 존재하지 않을 경우에만 전역에 선언되어 있는 userName을 사용한다.
  */
 
-function add(num1, num2) {
-  const result = num1 + num2;
+function add() {
+  // * input tag의 value 속성은 항상 문자열(string) 형태로 처리된다.
+  currentResult = currentResult + parseInt(userInput.value, 10);
 
-  return result;
+  outputResult(currentResult);
 }
 
-addBtn.addEventListener("click", function action() {
-  alert(add(2, 7));
-});
+addBtn.addEventListener("click", add);
