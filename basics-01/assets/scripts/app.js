@@ -34,6 +34,8 @@ outputResult(result, "");
 
 /**
  * ? 함수의 variable shadowing 사용
+ * * 섀도우 변수란 함수에서 선언된 지역 변수이면서 전역 변수로도 존재하는 변수
+ *
  * * let userName = 'DongGyu';
  *
  * * function greetUser(name) {
@@ -55,5 +57,6 @@ function add(num1, num2) {
   return result;
 }
 
-add(1, 5);
-add(2, 7);
+addBtn.addEventListener("click", function action() {
+  alert(add(2, 7));
+});
