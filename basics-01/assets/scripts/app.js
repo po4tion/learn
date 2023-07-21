@@ -13,7 +13,7 @@
  */
 
 const defaultResult = 0;
-let currentResult = defaultResult;
+let currentNumber = defaultResult;
 
 /**
  * * 함수에는 세미콜론을 붙이지 않는다.
@@ -49,11 +49,66 @@ let currentResult = defaultResult;
  * * userName이라는 지역 변수가 존재하지 않을 경우에만 전역에 선언되어 있는 userName을 사용한다.
  */
 
-function add() {
-  // * input tag의 value 속성은 항상 문자열(string) 형태로 처리된다.
-  currentResult = currentResult + parseInt(userInput.value, 10);
+/**
+ * ? 리팩토링은 무엇인가
+ * * 반복하지 않아도 되고, 로직을 나누지 않아도 되는 코드를 작성한다.
+ */
 
-  outputResult(currentResult);
+function getUserNumberInput() {
+  const result = parseInt(userInput.value, 10);
+
+  return result;
+}
+
+/**
+ * @param {*} prevCalculatedNumber 이전 계산된 값
+ * @param {*} operator 연산자
+ * @param {*} currentNumber 현재 입력된 값
+ */
+function createAndWriteOutput(prevCalculatedNumber, operator, currentNumber) {
+  const description = `${prevCalculatedNumber} ${operator} ${currentNumber}`;
+
+  outputResult(currentNumber, description);
+}
+
+function add() {
+  const enteredNumber = getUserNumberInput();
+  const prevCalculatedNumber = currentNumber;
+
+  // * input tag의 value 속성은 항상 문자열(string) 형태로 처리된다.
+  currentNumber = currentNumber + parseInt(enteredNumber, 10);
+
+  createAndWriteOutput(prevCalculatedNumber, "+", currentNumber);
+}
+
+function subtract() {
+  const enteredNumber = getUserNumberInput();
+  const prevCalculatedNumber = currentNumber;
+
+  currentNumber = currentNumber - parseInt(enteredNumber, 10);
+
+  createAndWriteOutput(prevCalculatedNumber, "-", currentNumber);
+}
+
+function multiply() {
+  const enteredNumber = getUserNumberInput();
+  const prevCalculatedNumber = currentNumber;
+
+  currentNumber = currentNumber * parseInt(enteredNumber, 10);
+
+  createAndWriteOutput(prevCalculatedNumber, "*", currentNumber);
+}
+
+function divide() {
+  const enteredNumber = getUserNumberInput();
+  const prevCalculatedNumber = currentNumber;
+
+  currentNumber = currentNumber / parseInt(enteredNumber, 10);
+
+  createAndWriteOutput(prevCalculatedNumber, "/", currentNumber);
 }
 
 addBtn.addEventListener("click", add);
+subtractBtn.addEventListener("click", subtract);
+multiplyBtn.addEventListener("click", multiply);
+divideBtn.addEventListener("click", divide);
