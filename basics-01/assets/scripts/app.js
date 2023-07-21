@@ -65,8 +65,12 @@ function getUserNumberInput() {
  * @param {*} operator 연산자
  * @param {*} currentNumber 현재 입력된 값
  */
-function createAndWriteOutput(prevCalculatedNumber, operator, currentNumber) {
-  const description = `${prevCalculatedNumber} ${operator} ${currentNumber}`;
+function createAndWriteOutput(
+  prevCalculatedNumber,
+  operator,
+  currentEnteredNumber
+) {
+  const description = `${prevCalculatedNumber} ${operator} ${currentEnteredNumber}`;
 
   outputResult(currentNumber, description);
 }
@@ -76,36 +80,36 @@ function add() {
   const prevCalculatedNumber = currentNumber;
 
   // * input tag의 value 속성은 항상 문자열(string) 형태로 처리된다.
-  currentNumber = currentNumber + parseInt(enteredNumber, 10);
+  currentNumber += parseInt(enteredNumber, 10);
 
-  createAndWriteOutput(prevCalculatedNumber, "+", currentNumber);
+  createAndWriteOutput(prevCalculatedNumber, "+", enteredNumber);
 }
 
 function subtract() {
   const enteredNumber = getUserNumberInput();
   const prevCalculatedNumber = currentNumber;
 
-  currentNumber = currentNumber - parseInt(enteredNumber, 10);
+  currentNumber -= parseInt(enteredNumber, 10);
 
-  createAndWriteOutput(prevCalculatedNumber, "-", currentNumber);
+  createAndWriteOutput(prevCalculatedNumber, "-", enteredNumber);
 }
 
 function multiply() {
   const enteredNumber = getUserNumberInput();
   const prevCalculatedNumber = currentNumber;
 
-  currentNumber = currentNumber * parseInt(enteredNumber, 10);
+  currentNumber *= parseInt(enteredNumber, 10);
 
-  createAndWriteOutput(prevCalculatedNumber, "*", currentNumber);
+  createAndWriteOutput(prevCalculatedNumber, "*", enteredNumber);
 }
 
 function divide() {
   const enteredNumber = getUserNumberInput();
   const prevCalculatedNumber = currentNumber;
 
-  currentNumber = currentNumber / parseInt(enteredNumber, 10);
+  currentNumber /= parseInt(enteredNumber, 10);
 
-  createAndWriteOutput(prevCalculatedNumber, "/", currentNumber);
+  createAndWriteOutput(prevCalculatedNumber, "/", enteredNumber);
 }
 
 addBtn.addEventListener("click", add);
