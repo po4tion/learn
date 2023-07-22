@@ -14,6 +14,7 @@
 
 const defaultResult = 0;
 let currentNumber = defaultResult;
+let logEntries = [];
 
 /**
  * * 함수에는 세미콜론을 붙이지 않는다.
@@ -63,7 +64,7 @@ function getUserNumberInput() {
 /**
  * @param {*} prevCalculatedNumber 이전 계산된 값
  * @param {*} operator 연산자
- * @param {*} currentNumber 현재 입력된 값
+ * @param {*} currentEnteredNumber 현재 입력된 값
  */
 function createAndWriteOutput(
   prevCalculatedNumber,
@@ -75,14 +76,37 @@ function createAndWriteOutput(
   outputResult(currentNumber, description);
 }
 
+/**
+ *
+ * @param {*} prevCalculatedNumber 이전 계산된 값
+ * @param {*} operation 연산자
+ * @param {*} currentEnteredNumber 현재 입력된 값
+ * @param {*} currentNumber 이전 값과 현재 값의 연산 결과
+ */
+function createLogEntry(
+  prevCalculatedNumber,
+  operation,
+  currentEnteredNumber,
+  currentNumber
+) {
+  const logEntry = {
+    prevCalculatedNumber,
+    operation,
+    currentEnteredNumber,
+    currentNumber,
+  };
+
+  logEntries.push(logEntry);
+}
+
 function add() {
   const enteredNumber = getUserNumberInput();
   const prevCalculatedNumber = currentNumber;
 
   // * input tag의 value 속성은 항상 문자열(string) 형태로 처리된다.
   currentNumber += parseInt(enteredNumber, 10);
-
   createAndWriteOutput(prevCalculatedNumber, "+", enteredNumber);
+  createLogEntry(prevCalculatedNumber, "ADD", enteredNumber, currentNumber);
 }
 
 function subtract() {
@@ -90,8 +114,13 @@ function subtract() {
   const prevCalculatedNumber = currentNumber;
 
   currentNumber -= parseInt(enteredNumber, 10);
-
   createAndWriteOutput(prevCalculatedNumber, "-", enteredNumber);
+  createLogEntry(
+    prevCalculatedNumber,
+    "SUBTRACT",
+    enteredNumber,
+    currentNumber
+  );
 }
 
 function multiply() {
@@ -99,8 +128,13 @@ function multiply() {
   const prevCalculatedNumber = currentNumber;
 
   currentNumber *= parseInt(enteredNumber, 10);
-
   createAndWriteOutput(prevCalculatedNumber, "*", enteredNumber);
+  createLogEntry(
+    prevCalculatedNumber,
+    "MULTIPLY",
+    enteredNumber,
+    currentNumber
+  );
 }
 
 function divide() {
@@ -108,8 +142,8 @@ function divide() {
   const prevCalculatedNumber = currentNumber;
 
   currentNumber /= parseInt(enteredNumber, 10);
-
   createAndWriteOutput(prevCalculatedNumber, "/", enteredNumber);
+  createLogEntry(prevCalculatedNumber, "DIVIDE", enteredNumber, currentNumber);
 }
 
 addBtn.addEventListener("click", add);
