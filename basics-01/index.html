@@ -10,6 +10,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles/app.css" />
+
+    <!-- JavaScript 파일들의 동작하는 순서가 중요하다 -->
+    <script src="assets/scripts/vendor.js" defer></script>
+    <!-- New! attribute의 문자를 따옴표 혹은 쌍따옴표로 감싸지 않아도 동작한다 -->
+    <script src="assets/scripts/app.js" defer></script>
+    <!-- async는 HTML의 구문분석이 끝날 때까지 기다리지 않고 최대한 빠르게 실행한다. -->
+    <!-- defer는 HTML의 구문분석과 동시에 JavaScript를 백그라운드에서 다운로드 받는다. HTML의 구문분석이 끝난 후 실행시킨다. 
+         또한, defer는 실행 순서를 보장해준다. app.js의 다운로드가 먼저 되었다고 해서 app.js가 먼저 실행되지 않고 vendor.js가 실행된다.
+    -->
   </head>
   <body>
     <header>
@@ -29,10 +38,5 @@
       <h2 id="current-calculation">0</h2>
       <h2>Result: <span id="current-result">0</span></h2>
     </section>
-
-    <!-- JavaScript 파일들의 동작하는 순서가 중요하다 -->
-    <script src="assets/scripts/vendor.js"></script>
-    <!-- New! attribute의 문자를 따옴표 혹은 쌍따옴표로 감싸지 않아도 동작한다 -->
-    <script src="assets/scripts/app.js"></script>
   </body>
 </html>
