@@ -47,13 +47,17 @@ function createLogEntry(
  * @param {*} type 연산자 종류
  */
 function calculateResult(type) {
-  if (type !== "ADD" && type !== "SUBTRACT" && type !== "MULTIPLY" && type !== "DIVIDE") {
+  const enteredNumber = getUserNumberInput();
+
+  if (
+    (type !== "ADD" && type !== "SUBTRACT" && type !== "MULTIPLY" && type !== "DIVIDE") ||
+    !enteredNumber
+  ) {
     return;
   }
 
   // 50번째 줄에서의 if 조건문을 통해 early return을 하고 있으므로 55번째줄의 if문은 선택사항이다.
   if (type === "ADD" || type === "SUBTRACT" || type === "MULTIPLY" || type === "DIVIDE") {
-    const enteredNumber = getUserNumberInput();
     const prevCalculatedNumber = currentNumber;
     let operator = "";
 
