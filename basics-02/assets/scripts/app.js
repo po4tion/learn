@@ -49,6 +49,21 @@ function createLogEntry(
 function calculateResult(type) {
   const enteredNumber = getUserNumberInput();
 
+  /**
+   * * 숫자 0은 falsy 값
+   * * 그 외의 숫자들은 truthy 값
+
+   * * "" 빈 문자열은 falsy 값
+   * * 그 외의 비어있지 않은 문자열은 truthy 값
+
+   * * {}, [] 외의 모든 객체와 배열들은 truthy 값
+
+   * * null, undefined, NaN은 falsy 값
+  */
+
+  /**
+   * JavaScript의 if문은 조건으로 전달한 값을 bool 값으로 강제 변환합니다.
+   */
   if (
     (type !== "ADD" && type !== "SUBTRACT" && type !== "MULTIPLY" && type !== "DIVIDE") ||
     !enteredNumber
