@@ -13,11 +13,7 @@ function getUserNumberInput() {
  * @param {*} operator 연산자
  * @param {*} currentEnteredNumber 현재 입력된 값
  */
-function createAndWriteOutput(
-  prevCalculatedNumber,
-  operator,
-  currentEnteredNumber
-) {
+function createAndWriteOutput(prevCalculatedNumber, operator, currentEnteredNumber) {
   const description = `${prevCalculatedNumber} ${operator} ${currentEnteredNumber}`;
 
   outputResult(currentNumber, description);
@@ -51,26 +47,33 @@ function createLogEntry(
  * @param {*} type 연산자 종류
  */
 function calculateResult(type) {
-  const enteredNumber = getUserNumberInput();
-  const prevCalculatedNumber = currentNumber;
-  let operator = "";
-
-  if (type === "ADD") {
-    currentNumber += parseInt(enteredNumber, 10);
-    operator = "+";
-  } else if (type === "SUBTRACT") {
-    currentNumber -= parseInt(enteredNumber, 10);
-    operator = "-";
-  } else if (type === "MULTIPLY") {
-    currentNumber *= parseInt(enteredNumber, 10);
-    operator = "*";
-  } else {
-    currentNumber /= parseInt(enteredNumber, 10);
-    operator = "/";
+  if (type !== "ADD" && type !== "SUBTRACT" && type !== "MULTIPLY" && type !== "DIVIDE") {
+    return;
   }
 
-  createAndWriteOutput(prevCalculatedNumber, operator, enteredNumber);
-  createLogEntry(prevCalculatedNumber, type, enteredNumber, currentNumber);
+  // 50번째 줄에서의 if 조건문을 통해 early return을 하고 있으므로 55번째줄의 if문은 선택사항이다.
+  if (type === "ADD" || type === "SUBTRACT" || type === "MULTIPLY" || type === "DIVIDE") {
+    const enteredNumber = getUserNumberInput();
+    const prevCalculatedNumber = currentNumber;
+    let operator = "";
+
+    if (type === "ADD") {
+      currentNumber += parseInt(enteredNumber, 10);
+      operator = "+";
+    } else if (type === "SUBTRACT") {
+      currentNumber -= parseInt(enteredNumber, 10);
+      operator = "-";
+    } else if (type === "MULTIPLY") {
+      currentNumber *= parseInt(enteredNumber, 10);
+      operator = "*";
+    } else if (type === "DIVIDE") {
+      currentNumber /= parseInt(enteredNumber, 10);
+      operator = "/";
+    }
+
+    createAndWriteOutput(prevCalculatedNumber, operator, enteredNumber);
+    createLogEntry(prevCalculatedNumber, type, enteredNumber, currentNumber);
+  }
 }
 
 function add() {
