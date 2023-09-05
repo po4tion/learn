@@ -3,10 +3,15 @@ const STRONG_ATTACK_VALUE = 20;
 const MONSTER_ATTACK_VALUE = 14;
 const HEAL_VALUE = 20;
 
-let chosenMaxLife = 100;
+const enteredValue = prompt("당신과 몬스터는 최대 체력으로 시작합니다.", "100");
+let chosenMaxLife = parseInt(enteredValue, 10);
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
+
+if (isNaN(enteredValue) || chosenMaxLife <= 0) {
+  chosenMaxLife = 100;
+}
 
 adjustHealthBars(chosenMaxLife);
 
