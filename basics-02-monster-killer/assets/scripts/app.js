@@ -3,6 +3,9 @@ const STRONG_ATTACK_VALUE = 20;
 const MONSTER_ATTACK_VALUE = 14;
 const HEAL_VALUE = 20;
 
+const MODE_ATTACK = "ATTACK";
+const MODE_STRONG_ATTACK = "STRONG_ATTACK";
+
 const enteredValue = prompt("당신과 몬스터는 최대 체력으로 시작합니다.", "100");
 let chosenMaxLife = parseInt(enteredValue, 10);
 let currentMonsterHealth = chosenMaxLife;
@@ -51,9 +54,9 @@ function endRound() {
 function attackMonster(mode) {
   let maxDamage;
 
-  if (mode === "ATTACK") {
+  if (mode === MODE_ATTACK) {
     maxDamage = ATTACK_VALUE;
-  } else if (mode === "STRONG_ATTACK") {
+  } else if (mode === MODE_STRONG_ATTACK) {
     maxDamage = STRONG_ATTACK_VALUE;
   }
 
