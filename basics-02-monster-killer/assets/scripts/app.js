@@ -1,12 +1,47 @@
 const ATTACK_VALUE = 10;
 const STRONG_ATTACK_VALUE = 20;
 const MONSTER_ATTACK_VALUE = 14;
+const HEAL_VALUE = 20;
 
 let chosenMaxLife = 100;
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
+let hasBonusLife = true;
 
 adjustHealthBars(chosenMaxLife);
+
+function reset() {
+  currentMonsterHealth = chosenMaxLife;
+  currentPlayerHealth = chosenMaxLife;
+  resetGame(chosenMaxLife);
+}
+
+function endRound() {
+  const initialPlayerHealth = currentPlayerHealth;
+  const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
+
+  currentPlayerHealth -= playerDamage;
+
+  if (currentPlayerHealth <= 0 && hasBonusLife) {
+    hasBonusLife = false;
+    currentPlayerHealth = initialPlayerHealth;
+
+    setPlayerHealth(currentPlayerHealth);
+    removeBonusLife();
+    alert("보너스 생명을 사용하여 되살아났습니다!");
+  }
+
+  if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
+    alert("당신이 이겼습니다!");
+    reset();
+  } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
+    alert("당신이 패배했습니다!");
+    reset();
+  } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
+    alert("둘이 비겼습니다!");
+    reset();
+  }
+}
 
 function attackMonster(mode) {
   let maxDamage;
@@ -18,18 +53,10 @@ function attackMonster(mode) {
   }
 
   const damage = dealMonsterDamage(maxDamage);
-  const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
 
   currentMonsterHealth -= damage;
-  currentPlayerHealth -= playerDamage;
 
-  if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
-    alert("당신이 이겼습니다!");
-  } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
-    alert("당신이 패배했습니다!");
-  } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
-    alert("둘이 비겼습니다!");
-  }
+  endRound();
 }
 
 function attackHandler() {
@@ -40,5 +67,22 @@ function strongAttackHandler() {
   attackMonster("STRONG_ATTACK");
 }
 
+function healPlayerHandler() {
+  let healValue;
+
+  if (currentPlayerHealth > chosenMaxLife - HEAL_VALUE) {
+    alert("최대 체력을 초과하는 회복은 사용 불가능합니다.");
+
+    healValue = chosenMaxLife - currentPlayerHealth;
+  } else {
+    healValue = HEAL_VALUE;
+  }
+
+  increasePlayerHealth(healValue);
+
+  currentPlayerHealth += healValue;
+}
+
 attackBtn.addEventListener("click", attackHandler);
 strongAttackBtn.addEventListener("click", strongAttackHandler);
+healBtn.addEventListener("click", healPlayerHandler);
