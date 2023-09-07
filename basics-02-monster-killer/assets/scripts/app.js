@@ -6,26 +6,40 @@ const HEAL_VALUE = 20;
 const MODE_ATTACK = "ATTACK";
 const MODE_STRONG_ATTACK = "STRONG_ATTACK";
 
-const enteredValue = prompt("당신과 몬스터는 최대 체력으로 시작합니다.", "100");
-
 const LOG_EVENT_PLAYER_ATTACK = "PLAYER_ATTACK";
 const LOG_EVENT_PLAYER_STRONG_ATTACK = "PLAYER_STRONG_ATTACK";
 const LOG_EVENT_MONSTER_ATTACK = "MONSTER_ATTACK";
 const LOG_EVENT_PLAYER_HEAL = "PLAYER_HEAL";
 const LOG_EVENT_GAME_OVER = "GAME_OVER";
 
-let chosenMaxLife = parseInt(enteredValue, 10);
+let chosenMaxLife;
 let battleLog = [];
-
-if (isNaN(enteredValue) || chosenMaxLife <= 0) {
-  chosenMaxLife = 100;
-}
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
 
+try {
+  chosenMaxLife = getMaxLifeValues();
+} catch (error) {
+  chosenMaxLife = 100;
+
+  console.error(error);
+  alert("잘못된 값이 입력되었습니다. 기본 체력이 100으로 적용됩니다.");
+}
+
 adjustHealthBars(chosenMaxLife);
+
+function getMaxLifeValues() {
+  const enteredValue = prompt("당신과 몬스터는 최대 체력으로 시작합니다.", "100");
+  const parsedValue = parseInt(enteredValue, 10);
+
+  if (isNaN(parsedValue) || parsedValue <= 0) {
+    throw { message: "다시 입력해주세요." };
+  }
+
+  return parsedValue;
+}
 
 function writeToLog(ev, val, monsterHealth, playerHealth) {
   let logEntry = {
