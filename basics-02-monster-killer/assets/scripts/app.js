@@ -36,6 +36,7 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
   };
 
   // 간단한 조건이 아닌 경우에는 if문을 사용하는 것이 편하다
+  // Switch문은 fall-through 메커니즘을 사용한다.
   switch (ev) {
     case LOG_EVENT_PLAYER_ATTACK:
       logEntry.target = "MONSTER";
@@ -154,10 +155,16 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  console.log(battleLog);
+  for (const log of battleLog) {
+    console.table(log);
+  }
 }
 
 attackBtn.addEventListener("click", attackHandler);
 strongAttackBtn.addEventListener("click", strongAttackHandler);
 healBtn.addEventListener("click", healPlayerHandler);
 logBtn.addEventListener("click", printLogHandler);
+
+window.addEventListener("devtoolschange", (event) => {
+  console.log(event);
+});
