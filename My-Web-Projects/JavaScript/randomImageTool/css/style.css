@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  background-color: #E0E0E0;
+  font-family: 'Itim', cursive;
+  font-size: 16px;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.header h1 {
+  font-size: 3rem;
+}
+
+.header__source {
+  position: absolute;
+  right: 0;
+  font-size: 1rem;
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section__image {
+  border: 3px solid #84838D;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.section__name {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section__user {
+  font-size: 1.5rem;
+  color: #f0932b;
+}
+
+.section__user--color {
+  color: #30336b;
+}
+
+.btn {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn--left {
+  display: none;
+  padding-right: 50px;
+}
+
+.btn--right {
+  padding-left: 50px;
+}
+
+.btn button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.btn i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

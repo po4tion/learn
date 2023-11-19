@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+KR&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Lobster', cursive;
+  height: 100vh;
+}
+header {
+  background: url('https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80') no-repeat center center/cover;
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 5px solid #dcdde1;
+  p {
+    font-size: 6rem;
+  }
+}
+section {
+  background-color: #7f8fa6;
+  height: 60vh;
+  border-right: 5px solid #dcdde1;
+  border-left: 5px solid #dcdde1;
+  position: relative;
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    h3 {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      padding: 0 80px 0 100px;
+      font-size: 3rem;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    input {
+      text-align: center;
+      font-size: 50px;
+      border-radius: 5px;
+      border: 0;
+      margin-top: 15px;
+    }
+    input:focus {
+      outline: 1px solid #f39c12;
+    }
+  }
+  .btn {
+    text-align: center;
+    input {
+      font-size: 3rem;
+      border: 0;
+      border-radius: 15px;
+      cursor: pointer;
+      margin: 0 30px 0 30px;
+      background-color: #3498db;
+      color: #34495e;
+    }
+    input:focus {
+      outline: none;
+    }
+    input:active {
+      transform: scale(0.9);
+    }
+  }
+  .endTimer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7f8c8d;
+    font-size: 5rem;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    font-weight: bold;
+  }
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80') no-repeat center center/cover;
+  height: 20vh;
+  width: 100%;
+  border-top: 5px solid #dcdde1;
+}

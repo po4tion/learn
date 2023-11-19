@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Watch</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://kit.fontawesome.com/909bf44ce5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Stop Watch</h1>
+  <div class="timer">
+    <i class="fas fa-stopwatch"></i>
+    <span id="hour"></span>
+    <span>:</span>
+    <span id="minute"></span>
+    <span>:</span>
+    <span id="second"></span>
+  </div>
+
+  <div class="btn">
+    <i class="fas fa-play play" id="play"></i>
+    <i class="fas fa-pause pause" id="pause"></i>
+    <i class="fas fa-stop stop" id="stop"></i>
+    <i class="fas fa-undo undo" id="save"></i>
+  </div>
+
+  <div class="record">
+    <h3>Time Record</h3>
+    <hr />
+    <ul id="record">
+      <!-- <li><i class="fas fa-history"></i> 08:42:16 <span class="new">NEW</span></li>
+      <li><i class="fas fa-history"></i> 08:42:16 <span class="new">NEW</span></li>
+      <li><i class="fas fa-history"></i> 08:42:16 <span class="new">NEW</span></li>
+      <li><i class="fas fa-history"></i> 08:42:16 <span class="new">NEW</span></li> -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

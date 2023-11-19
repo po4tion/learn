@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Dog Timer</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <p>Dog Timer</p>
+  </header>
+
+  <section>
+    <div class="text">
+      <h3>시간
+        <input type="number" value="0" min="0" max="24" id="hour">
+      </h3>
+      <h3>분
+        <input type="number" value="0" min="0" max="59" id="minute">
+      </h3>
+      <h3>초
+        <input type="number" value="0" min="0" max="59" id="second">
+      </h3>
+    </div>
+
+    <div class="btn">
+      <input type="button" value="시작" id="start">
+      <input type="button" value="중지" id="stop">
+      <input type="button" value="초기화" id="clear">
+    </div>
+
+    <div class="endTimer" id="endTimer">
+      <p>타이머 종료!</p>
+    </div>
+  </section>
+
+  <footer>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
