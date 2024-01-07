@@ -14,3 +14,13 @@ const person = {
 person.greet();
 
 startGameBtn.addEventListener("click", startGame);
+
+console.dir(startGame); // 함수 그 자체로도 하나의 객체다
+/* 
+f startGame()
+  arguments: null
+  caller: null
+  length: 0
+  name: "startGame",
+  prototype: { constructor: f }
+*/
