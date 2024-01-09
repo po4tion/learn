@@ -84,7 +84,7 @@ startGameBtn.addEventListener("click", () => {
 // rest parameters
 // rest 연산은 항상 리스트의 마지막에 위치해야 한다. 뒤의 매개변수는 절대로 전달되지 않기 때문이다.
 // (X) const sumUp = (...numbers, another) => {}
-const sumUp = (resetHandler, ...numbers) => {
+const combine = (resetHandler, operation, ...numbers) => {
   const validateNumber = (number) => {
     return isNaN(number) ? 0 : number;
   };
@@ -92,26 +92,36 @@ const sumUp = (resetHandler, ...numbers) => {
   let sum = 0;
 
   for (const num of numbers) {
-    sum += validateNumber(num);
+    if (operation === "ADD") {
+      sum += validateNumber(num);
+    } else {
+      sum -= validateNumber(num);
+    }
   }
 
   resetHandler(sum);
 };
 
-const showResult = (result) => {
-  alert("The result after adding all numbers is: " + result);
+const showResult = (messageText, result) => {
+  alert(messageText + " " + result);
 };
 
-console.log(sumUp(showResult, 1, 2, 3, 4, "Not Render"));
+combine(
+  showResult.bind(this, "The result after adding all number is"),
+  "ADD",
+  1,
+  2,
+  3,
+  4,
+  "Not Render"
+);
 
-const subtractUp = function () {
-  let sum = 0;
-
-  for (const num of arguments) {
-    sum -= num;
-  }
-
-  return sum;
-};
-
-console.log(subtractUp(1, 2, 3, 4, 5));
+combine(
+  showResult.bind(this, "The result after subtracting all number is"),
+  "SUBTRACT",
+  1,
+  2,
+  3,
+  4,
+  5
+);
