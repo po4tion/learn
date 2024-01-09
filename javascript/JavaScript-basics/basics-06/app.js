@@ -80,3 +80,30 @@ startGameBtn.addEventListener("click", () => {
 
   alert(message);
 });
+
+// rest parameters
+// rest 연산은 항상 리스트의 마지막에 위치해야 한다. 뒤의 매개변수는 절대로 전달되지 않기 때문이다.
+// (X) const sumUp = (...numbers, another) => {}
+const sumUp = (...numbers) => {
+  let sum = 0;
+
+  for (const num of numbers) {
+    sum += num;
+  }
+
+  return sum;
+};
+
+console.log(sumUp(1, 2, 3, 4, 5));
+
+const subtractUp = function () {
+  let sum = 0;
+
+  for (const num of arguments) {
+    sum -= num;
+  }
+
+  return sum;
+};
+
+console.log(subtractUp(1, 2, 3, 4, 5));
