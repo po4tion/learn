@@ -15,3 +15,7 @@
 
 1. Maximilian Schwarzmüller - React-The Complete Guide 2023 [바로가기](./react/study-react/)
 2. Velopert - 벨로퍼트와 함께하는 모던 리액트 [바로가기](./react/React-Project/)
+
+## Rust
+
+1. Lyubomir Gavadinov - Learn Rust by Building Real Applications [바로가기](./rust/building-real-application/)
