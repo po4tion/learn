@@ -1,0 +1,1 @@
+/Users/po4tion/Desktop/study/learn/rust/building-real-application/mars_calculator/target/debug/mars_calculator: /Users/po4tion/Desktop/study/learn/rust/building-real-application/mars_calculator/src/main.rs
