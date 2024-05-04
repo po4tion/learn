@@ -1,5 +1,9 @@
 # What i learned
 
+## Data Structure & Algorithm
+
+1. Colt Steele - JavaScript Algorithms and Data Structures Masterclass [바로가기](./data-structure/)
+
 ## JavaScript
 
 1. Maximilian Schwarzmüller - JavaScript - The Complete Guide 2023 (Beginner + Advanced) [바로가기](./javascript/JavaScript-basics/)
@@ -11,6 +15,10 @@
 
 1. 드림코딩엘리 - TDD와 리액트 테스트 [바로가기](./jest/dream-coding)
 
+## NestJS
+
+1. Stephen Grider - NestJS: The Complete Developer's Guide [바로가기](./nestjs)
+
 ## React
 
 1. Maximilian Schwarzmüller - React-The Complete Guide 2023 [바로가기](./react/study-react/)
@@ -19,7 +27,3 @@
 ## Rust
 
 1. Lyubomir Gavadinov - Learn Rust by Building Real Applications [바로가기](./rust/building-real-application/)
-
-## NestJS
-
-1. Stephen Grider - NestJS: The Complete Developer's Guide [바로가기](./nestjs)
