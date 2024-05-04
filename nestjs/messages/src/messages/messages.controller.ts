@@ -12,11 +12,7 @@ import { MessagesService } from './messages.service';
 // class decorator
 @Controller('messages')
 export class MessagesController {
-  messagesService: MessagesService;
-
-  constructor() {
-    this.messagesService = new MessagesService();
-  }
+  constructor(public messagesService: MessagesService) {}
 
   // method decorator
   @Get()
