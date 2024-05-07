@@ -1,19 +1,16 @@
 log = console.log;
 
 function countUniqueValues(values) {
-  // 배열의 길이가 0, 1일 때 처리
-  if (values.length <= 1) {
+  // 배열의 길이가 0일 때 처리
+  if (values.length < 1) {
     return values.length;
   }
 
   let leftIndex = 0;
-  let rightIndex = 1;
 
-  for (let i = 0; i < values.length - 1; i += 1) {
-    if (values[leftIndex] === values[rightIndex]) {
-      rightIndex += 1;
-    } else {
-      values[++leftIndex] = values[rightIndex++];
+  for (let rightIndex = 1; rightIndex < values.length; rightIndex += 1) {
+    if (values[leftIndex] !== values[rightIndex]) {
+      values[++leftIndex] = values[rightIndex];
     }
   }
 
