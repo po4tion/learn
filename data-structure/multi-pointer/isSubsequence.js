@@ -12,17 +12,16 @@ function isSubsequence(arg1, arg2) {
   let left = 0;
   let right = 0;
 
-  while (left < arg1.length && right < arg2.length) {
+  while (right < arg2.length) {
     if (left === arg1.length - 1) {
       return true;
     }
 
     if (arg1[left] === arg2[right]) {
       left += 1;
-      right += 1;
-    } else {
-      right += 1;
     }
+
+    right += 1;
   }
 
   return false;
