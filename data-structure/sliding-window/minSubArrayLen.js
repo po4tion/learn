@@ -11,6 +11,7 @@ function minSubArrayLen(inputs, number) {
       right += 1;
       sum += inputs[right];
     } else {
+      // right - left + 1 > number 이상의 숫자인 경우에 필요한 숫자들의 개수
       result = result > right - left + 1 ? right - left + 1 : result;
       sum -= inputs[left];
       left += 1;
